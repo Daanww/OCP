@@ -1,7 +1,7 @@
 cmake_minimum_required( VERSION 3.17 )
 project( OCP )
 
-set( N_PROC 2 CACHE STRING "Number of processes used for generating code")
+set( N_PROC 16 CACHE STRING "Number of processes used for generating code")
 
 find_package(LLVM REQUIRED )
 find_package(VTK REQUIRED )
@@ -26,6 +26,8 @@ else()
 endif()
 
 set(ENV{PYTHONPATH} ${CMAKE_SOURCE_DIR}/pywrap )
+
+include_directories(${CMAKE_SOURCE_DIR}/opencascade/)
 
 if( NOT EXISTS ${CMAKE_SOURCE_DIR}/OCP )
     message( STATUS "Running pywrap")
