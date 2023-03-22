@@ -88,7 +88,7 @@ public:
   //! exact geometry objects (curves) are used, otherwise polygons of 
   //! triangulation are used first.
   Standard_EXPORT static void LinearProperties(const TopoDS_Shape& S, GProp_GProps& LProps, 
-                                  const Standard_Boolean SkipShared = Standard_False,
+                                  const Standard_Boolean SkipShared = Standard_True,
                                   const Standard_Boolean UseTriangulation = Standard_False);
   
   //! Computes the surface global properties of the
@@ -132,7 +132,7 @@ public:
   //! exact geometry objects (surfaces) are used, 
   //! otherwise face triangulations are used first.
   Standard_EXPORT static void SurfaceProperties(const TopoDS_Shape& S, GProp_GProps& SProps, 
-                                         const Standard_Boolean SkipShared = Standard_False,
+                                         const Standard_Boolean SkipShared = Standard_True,
                                   const Standard_Boolean UseTriangulation = Standard_False);
   
   //! Updates <SProps> with the shape <S>, that contains its principal properties.
@@ -148,7 +148,7 @@ public:
   //! For ex., if SkipShared = True, faces, shared by two or more shells, 
   //! are taken into calculation only once.
   Standard_EXPORT static Standard_Real SurfaceProperties (const TopoDS_Shape& S, GProp_GProps& SProps,
-                        const Standard_Real Eps, const Standard_Boolean SkipShared = Standard_False);
+                        const Standard_Real Eps, const Standard_Boolean SkipShared = Standard_True);
   //!
   //! Computes the global volume properties of the solid
   //! S, and brings them together with the global
@@ -193,7 +193,7 @@ public:
   //! otherwise face triangulations are used first.
   Standard_EXPORT static void VolumeProperties(const TopoDS_Shape& S, GProp_GProps& VProps, 
                                         const Standard_Boolean OnlyClosed = Standard_False, 
-                                        const Standard_Boolean SkipShared = Standard_False,
+                                        const Standard_Boolean SkipShared = Standard_True,
                                  const Standard_Boolean UseTriangulation = Standard_False);
   
   //! Updates <VProps> with the shape <S>, that contains its principal properties.
@@ -212,7 +212,7 @@ public:
   //! faces are taken into calculation only once.
   Standard_EXPORT static Standard_Real VolumeProperties (const TopoDS_Shape& S, GProp_GProps& VProps, 
                          const Standard_Real Eps, const Standard_Boolean OnlyClosed = Standard_False, 
-                                                 const Standard_Boolean SkipShared = Standard_False);
+                                                 const Standard_Boolean SkipShared = Standard_True);
   
   //! Updates <VProps> with the shape <S>, that contains its principal properties.
   //! The volume properties of all the FORWARD and REVERSED faces in <S> are computed.
@@ -236,7 +236,7 @@ public:
     const Standard_Boolean IsUseSpan = Standard_False, 
     const Standard_Boolean CGFlag = Standard_False, 
     const Standard_Boolean IFlag = Standard_False, 
-    const Standard_Boolean SkipShared = Standard_False);
+    const Standard_Boolean SkipShared = Standard_True);
   
   Standard_EXPORT static Standard_Real VolumePropertiesGK (const TopoDS_Shape& S, 
     GProp_GProps& VProps, 
@@ -245,7 +245,7 @@ public:
     const Standard_Boolean IsUseSpan = Standard_False, 
     const Standard_Boolean CGFlag = Standard_False, 
     const Standard_Boolean IFlag = Standard_False, 
-    const Standard_Boolean SkipShared = Standard_False);
+    const Standard_Boolean SkipShared = Standard_True);
 
 };
 
